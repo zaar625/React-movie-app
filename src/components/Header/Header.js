@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import './header.scss';
 
-import logo from '../../assets/tmovie.png';
+import logo from '../../assets/logo512.png';
 
 const headerNav = [
     {
@@ -25,7 +25,7 @@ const Header = () => {
 
     const { pathname } = useLocation(); //{pathname: '/tv', search: '', hash: '', state: undefined, key: 'g20b0s'}
     const headerRef = useRef(null); //{current: div.header}
-    // console.log(headerRef)//{current: null}
+     console.log(headerRef)//{current: null}
     const active = headerNav.findIndex(e => e.path === pathname);
 
     useEffect(() => {
@@ -35,12 +35,14 @@ const Header = () => {
             } else {
                 headerRef.current.classList.remove('shrink');
             }
+            console.log(document.body.scrollTop)
         }
         window.addEventListener('scroll', shrinkHeader);
         
         return () => {
             window.removeEventListener('scroll', shrinkHeader);
         };
+        
     }, []);
 
     return (
@@ -48,7 +50,7 @@ const Header = () => {
             <div className="header__wrap container">
                 <div className="logo">
                     <img src={logo} alt="" />
-                    <Link to="/">tMovies</Link>
+                    <Link to="/">React Movies</Link>
                 </div>
                 <ul className="header__nav">
                     {

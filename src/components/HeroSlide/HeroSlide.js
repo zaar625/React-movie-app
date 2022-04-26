@@ -24,34 +24,34 @@ const HeroSlide = () =>{
         const getMovie = async () => {
         const {data} = await axios.get(`
         https://api.themoviedb.org/3/discover/movie?api_key=af43ac72d70dd07b3747f0dc7b4a2680&language=ko&sort_by=popularity.desc&include_adult=false&page=1`)
-        //console.log(data);
+        console.log(data);
         setMovieItems(data.results.slice(1, 4));
     
         };
         getMovie();
     },[]);
-   
+    console.log(movieItems)
 
     return(
         <div className="hero-slide">
-             <Swiper
+            <Swiper
                 modules={[Autoplay]}
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                //autoplay={{delay: 3000}}
+                autoplay={{delay: 3000}}
             >
                 {
                     movieItems.map((item, i)=>(
                         <SwiperSlide  key={i}>
-                             {({ isActive }) => (
+                            {({ isActive }) => (
                                 <HeroSlideItem item={item} className={`${isActive ? 'active' : ''}`} />
                             )}
                         </SwiperSlide>
                     ))
                 }
             </Swiper>
-                 {
+                {
                 movieItems.map((item, i) => <TrailerModal key={i} item={item}/>)
             }     
         </div>
@@ -90,10 +90,10 @@ const HeroSlideItem = (props) =>{
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
                         <Button onClick={() => history.push('/movie/' + item.id)}>
-                            Watch now
+                            Watch Info
                         </Button>
                         <OutlineButton onClick={setModalActive}>
-                            Watch trailer
+                            Watch Preview
                         </OutlineButton>    
                     </div>
                 </div>

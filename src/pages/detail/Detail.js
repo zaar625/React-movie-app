@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import apiConfig from "../../api/apiConfig";
 import Similar from "../../components/movie-list/Similar";
 import CastList from "./CastList";
-
 import './detail.scss';
 import VideoList from "./VideoList";
 

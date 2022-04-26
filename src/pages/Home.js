@@ -32,7 +32,7 @@ const Home =() => {
                     <TopMovieList/>
                 </div>
 
-                  <div className="section mb-3">
+                <div className="section mb-3">
                     <div className="section__header mb-2">
                         <h2>Trending TV</h2>
                         <Link to="/tv">
