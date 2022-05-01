@@ -12,7 +12,7 @@ const MovieCard = props => {
 
     const item  = props.item;
 
-    //console.log(item)
+    console.log(props)
     const link = '/' + props.category + '/' + item.id;
 
     const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path);
