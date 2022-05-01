@@ -14,7 +14,7 @@ import "./hero-slide.scss";
 import "swiper/swiper.scss";
 
 const HeroSlide = () => {
-  //   SwiperCore.use([Autoplay]);
+  SwiperCore.use([Autoplay]);
 
   const [movieItems, setMovieItems] = useState([]);
   useEffect(() => {
