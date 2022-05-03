@@ -1,5 +1,11 @@
+#### Movie-app (width React) 
+---
 
-###
+##### project-Info
 
-API를 불러오는 과정에서 중복된 것이 많다. 
-좀더 수정이 필요할듯.
+<a href="https://www.notion.so/React-Vue-Movie-739abd676a614cae856aa99ae75bfe2a">
+<img src="https://img.shields.io/badge/Notion-white?style=flat&logo=Notion&logoColor=black"/>
+</a>
+
+
+
